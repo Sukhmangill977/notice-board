@@ -38,7 +38,7 @@ function AddNotice() {
       };
 
       // Send POST request to backend API to create a new notice
-      await axios.post('/api/notices', noticeData);
+      await axios.post('https://notice-board-4d7b.onrender.com/api/notices', noticeData);
 
       // Clear form fields after successful submission
       setTitle('');

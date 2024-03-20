@@ -14,7 +14,7 @@ export default function EditNotice({ notice, onClose }) {
         content,
         imageUrl,
       };
-      await axios.put(`/api/notices/${notice._id}`, updatedNotice);
+      await axios.put(`https://notice-board-4d7b.onrender.com/api/notices/${notice._id}`, updatedNotice);
       onClose();
     } catch (error) {
       console.error('Error updating notice:', error);
