@@ -1,25 +1,42 @@
 .notice-board {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notice {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: calc(100% - 40px); /* Adjust width as needed */
+  overflow: hidden;
+}
+
+.notice img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 150px;
+  margin-bottom: 10px;
+}
+
+.read-more,
+.show-less {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block; /* Ensure buttons are displayed as blocks */
+  margin-left: auto; /* Center the buttons */
+  margin-right: auto; /* Center the buttons */
+  width: fit-content; /* Adjust width to fit content */
+}
+
+@media only screen and (max-width: 600px) {
   .notice {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
+    max-width: calc(100% - 20px); /* Adjust width as needed for smaller screens */
   }
-  
-  .notice img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .notice h3 {
-    display: flex; 
-    align-items: center; 
-    margin-bottom: 10px;
-  }
-  
+}

@@ -6,7 +6,6 @@ function AddNotice() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -30,7 +29,6 @@ function AddNotice() {
         }
       );
       const imageUploadData = await response.json();
-      setImageUrl(imageUploadData.secure_url); // Store image URL
 
       // Create notice with image URL
       const noticeData = {
