@@ -3,11 +3,19 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const noticeRoutes = require('./routes/noticeRoutes');
-const cors = require('cors')
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-app.use(cors())
+
+// CORS configuration
+const corsOptions = {
+    origin: "*",
+    // credentials: true,
+};
+
+// Allow CORS with specified options
+app.use(cors(corsOptions));
 
 // Middleware 
 app.use(bodyParser.json());
