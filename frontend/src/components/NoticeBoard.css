@@ -17,7 +17,7 @@
   max-width: 100%;
   height: auto;
   width: auto;
-  max-height: 150px;
+  max-height: 100px;
   margin-bottom: 10px;
 }
 
@@ -28,7 +28,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-bottom: 10px;
   display: block; /* Ensure buttons are displayed as blocks */
   margin-left: auto; /* Center the buttons */
   margin-right: auto; /* Center the buttons */
