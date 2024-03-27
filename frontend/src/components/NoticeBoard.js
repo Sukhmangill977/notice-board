@@ -1,3 +1,5 @@
+// NoticeBoard.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './NoticeBoard.css';
@@ -64,26 +66,27 @@ function NoticeBoard({ loggedIn }) {
 
   return (
     <div className="notice-board">
-      <h1>Notice Board</h1>
+      <h1 className='title'>Notice Board</h1>
       {notices.map(notice => (
-        <div key={notice._id} className="notice" style={{ maxHeight: expandedNoticeId === notice._id ? 'none' : '300px' }}>
-          <h3>
-            <img
-              src="common-image.png"
-              alt="Common Notice Icon"
-              style={{ height: "20px", width: "20px" }}
-            />
-            {notice.title}
-          </h3>
-          <p>{expandedNoticeId === notice._id ? notice.content : notice.content.slice(0, 150)}</p>
-          {notice.imageUrl && <img src={notice.imageUrl} alt="Notice" />}
-          {(notice.content.length > 150 || expandedNoticeId === notice._id) && (
-            <button className="toggle-button" onClick={() => handleToggleExpand(notice._id)}>
-              {expandedNoticeId === notice._id ? "Show Less" : "Read More"}
-            </button>
-          )}
-          {loggedIn && <button onClick={() => deleteNotice(notice._id)}>Delete</button>}
-          {loggedIn && <button onClick={() => handleEdit(notice)}>Edit</button>}
+        <div key={notice._id} className={`notice ${expandedNoticeId === notice._id ? 'expanded' : ''}`} style={{ maxHeight: expandedNoticeId === notice._id ? 'none' : '300px' }}>
+          <img
+            src="common_image.png"
+            alt="Common Notice Icon"
+            className="notice-image"
+          />
+          <div className="notice-content">
+            <h3>{notice.title}</h3>
+            <p>{expandedNoticeId === notice._id ? notice.content : `${notice.content.slice(0, 150)}...`}</p>
+            {expandedNoticeId === notice._id && notice.imageUrl && <img src={notice.imageUrl} alt="Notice" className="active" style={{ height: '300px', width: '300px' }} />}
+            {(notice.content.length > 150 || expandedNoticeId === notice._id) && (
+              <button className="toggle-button" onClick={() => handleToggleExpand(notice._id)}>
+                {expandedNoticeId === notice._id ? "Show Less" : "Read More"}
+              </button>
+            )}
+            {loggedIn && <button onClick={() => deleteNotice(notice._id)}>Delete</button>}
+            {loggedIn && <button onClick={() => handleEdit(notice)}>Edit</button>}
+          </div>
+          <span className="ellipsis">...</span>
         </div>
       ))}
       {openEditModal && (

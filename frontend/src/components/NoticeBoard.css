@@ -1,6 +1,10 @@
 .notice-board {
-  max-width: 800px;
+  max-width: 75%;
   margin: 0 auto;
+}
+
+.title {
+  color: #f9f9f9;
 }
 
 .notice {
@@ -11,18 +15,34 @@
   margin-bottom: 20px;
   max-width: calc(100% - 40px); /* Adjust width as needed */
   overflow: hidden;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Adjust to space items evenly */
 }
 
 .notice img {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-  max-height: 100px;
+  height: 140px; /* Increase the height of the image */
+  width: 140px; /* Increase the width of the image */
+  margin-right: 10px; /* Add some space between the image and text */
+}
+
+.notice-content {
+  flex-grow: 1; /* Allow the content to grow to fill the space */
+  text-align: justify; /* Justify text content */
+}
+
+.notice img,
+.notice-content h3,
+.notice-content p {
   margin-bottom: 10px;
 }
 
-.read-more,
-.show-less {
+.notice img:last-child,
+.notice-content p:last-child {
+  margin-bottom: 0; /* Remove extra margin from last elements */
+}
+
+.toggle-button {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 5px;

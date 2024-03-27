@@ -22,9 +22,12 @@ function App() {
 
   return (
     <div className="App">
-      {!loggedIn && ( // Show login button if not logged in
-        <button onClick={toggleLoginForm}>Login</button>
-      )}
+      <NoticeBoard loggedIn={loggedIn} />
+      <div className="login-button">
+        {!loggedIn && ( // Show login button if not logged in
+          <button className="login-button-text" onClick={toggleLoginForm}>Login</button>
+        )}
+      </div>
       {showLoginForm && ( // Show login form if button pressed
         <div className="login-container">
           <h2>Login</h2>
@@ -42,12 +45,11 @@ function App() {
               Password:
               <input type="password" name="password" />
             </label>
-            <button type="submit">Login</button>
+            <button type="submit" className="login-button-text">Login</button>
           </form>
         </div>
       )}
       {loggedIn && <AddNotice />} {/* Render AddNotice only if logged in */}
-      <NoticeBoard loggedIn={loggedIn} />
     </div>
   );
 }
