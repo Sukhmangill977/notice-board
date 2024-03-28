@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './EditNotice.css';
 export default function EditNotice({ notice, onClose }) {
   const [title, setTitle] = useState(notice.title);
   const [content, setContent] = useState(notice.content);
@@ -38,6 +38,7 @@ export default function EditNotice({ notice, onClose }) {
           <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
         </label>
         <button type="submit">Save Changes</button>
+        <button type="button" onClick={onClose}>Close</button> {/* Add a close button */}
       </form>
     </div>
   );
