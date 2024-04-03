@@ -1,5 +1,6 @@
 /* Styles for the whole application */
 .App {
+  padding-top: 90px;
   text-align: center;
   color: rgb(0, 0, 0); /* Default text color */
   background-image: url('./components/assets/bg.jpeg');

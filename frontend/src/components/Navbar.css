@@ -1,0 +1,65 @@
+/* Navbar.css */
+.navbar {
+    overflow-x: scroll;
+    display: flex;
+    overflow-x: ellipsis;
+    white-space: nowrap;
+    justify-content: center; /* Distribute items evenly */
+    align-items: center; /* Vertically center the content */
+    padding: 7px;
+    background: #001929; /* Change the background color to Prussian blue */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.navbar::-webkit-scrollbar {
+    display: none
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content:space-between; /* Distribute items evenly */
+    width: 100%; /* Take up full width of the navbar */
+}
+
+.navbar li {
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.navbar li:nth-last-child(1) { margin-right:20px }
+
+.navbar li:hover {
+    background: #303030;
+    color: rgba(0, 255, 115, 0.9);
+    transition: color 0.5s;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar button{
+    background: transparent;
+    border:#fff;
+    border-radius: 5px;
+    outline:auto;
+    cursor: pointer;
+    font-size: 18px;
+    color:#fff;
+}
+    
+/* @media (min-width: 768px) {
+  .navbar { display: none }
+} */
